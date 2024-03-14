@@ -1,0 +1,1 @@
+{"version":3,"file":"fibonacciTimer.js","sourceRoot":"","sources":["../../src/services/fibonacciTimer.ts"],"names":[],"mappings":";;;AAEO,MAAM,cAAc,GAAG,CAC5B,IAAa,EACb,GAAa,EACb,IAAkB,EAClB,EAAE;IACF,MAAM,SAAS,GAAG,OAAO,CAAC,MAAM,EAAE,CAAC;IAEnC,GAAG,CAAC,MAAM,CAAC,SAAS,GAAG,SAAS,CAAC;IAEjC,IAAI,EAAE,CAAC;AACT,CAAC,CAAC;AAVW,QAAA,cAAc,kBAUzB"}
