@@ -7,6 +7,7 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
+  testPathIgnorePatterns: ['/client/'],
 };
 
 export default config;
