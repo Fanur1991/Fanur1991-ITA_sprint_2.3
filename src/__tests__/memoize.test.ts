@@ -1,8 +1,7 @@
 import { fibonacci } from '../utils/fibonacci';
-import { performance } from 'perf_hooks';
 import { memoize } from '../utils/memoize';
 
-describe('Función Memoize', () => {
+describe('Prueba de la Función Memoize', () => {
   test('La función Fibonacci memoizada maneja correctamente los casos límite', () => {
     const memoizedFibonacci = fibonacci;
 

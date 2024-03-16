@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710617616174" clover="3.2.0">
-  <project timestamp="1710617616175" name="All files">
+<coverage generated="1710618274810" clover="3.2.0">
+  <project timestamp="1710618274810" name="All files">
     <metrics statements="85" coveredstatements="85" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1" elements="93" coveredelements="93" complexity="0" loc="85" ncloc="85" packages="1" files="2" classes="2"/>
     <file name="fibonacci.ts" path="D:\JS code\IT_Academy\sprint_2.3\server\src\utils\fibonacci.ts">
       <metrics statements="16" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="0" coveredmethods="0"/>
