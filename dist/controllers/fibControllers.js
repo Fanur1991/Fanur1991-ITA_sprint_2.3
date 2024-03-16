@@ -14,6 +14,7 @@ const fibService_1 = require("../services/fibService");
 const fetchFibonacci = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const inputValue = req.body.value;
+        console.log(typeof inputValue);
         if (!Number.isInteger(inputValue) || inputValue < 0) {
             return res.status(400).json({
                 error: 'Invalid input value. Please provide a non-negative integer.',

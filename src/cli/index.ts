@@ -1,36 +1,60 @@
-// import readline from 'readline';
-// import colors from 'colors';
+import readline from 'readline';
+import colors from 'colors';
+import { factorial } from '../utils/factorial';
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout,
-// });
+function measureTime(fn: () => void): number {
+  const startTime = process.hrtime.bigint();
+  fn();
+  const endTime = process.hrtime.bigint();
+  return Number(endTime - startTime) / 1e6;
+}
 
-// function handleInput(input: string) {
-//   console.log(colors.green(`Entrada recibida: ${input}`));
-// }
+function askForNumber(): Promise<number> {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-// const throttledHandleInput = throttle(
-//   (input: string) => handleInput(input),
-//   2000
-// );
+  return new Promise((resolve, reject) => {
+    rl.question(
+      'Ingrese un número para calcular el factorial (o "CTRL + C" para salir): ',
+      (answer) => {
+        rl.close();
+        if (answer.toLowerCase() === 'exit') {
+          console.log(colors.yellow('Cerrando el programa.'));
+          process.exit(0);
+        } else {
+          const num = parseInt(answer);
+          if (isNaN(num)) {
+            console.log(colors.red('Error: Número incorrecto ingresado.'));
+            reject(new Error('Número incorrecto ingresado'));
+          } else {
+            resolve(num);
+          }
+        }
+      }
+    );
+  });
+}
 
-// function runCLI() {
-//   rl.question(
-//     colors.yellow(
-//       'Escriba el texto para verificar la función throttle (Ctrl+C para salir): '
-//     ),
-//     (input) => {
-//       throttledHandleInput(input);
-//       runCLI();
-//     }
-//   );
-// }
+async function run() {
+  try {
+    const num = await askForNumber();
 
-// rl.on('close', () => {
-//   console.log(colors.red('Saliendo de la CLI. Hasta luego!'));
-//   process.exit(0);
-// });
+    console.log(colors.yellow(`Calculando el factorial de ${num}...`));
+    const result = factorial(num);
+    console.log(colors.green(`El factorial de ${num} es: ${result}`));
 
-// console.log(colors.yellow('CLI para probar la función throttle.'));
-// runCLI();
+    const timeTaken = measureTime(() => {});
+
+    console.log(colors.blue(`Tiempo de ejecución: ${timeTaken.toFixed(4)} ms`));
+  } catch (error) {
+    console.error(
+      colors.red(`Se produjo un error: ${(error as Error).message}`)
+    );
+  } finally {
+    run();
+  }
+}
+
+run();

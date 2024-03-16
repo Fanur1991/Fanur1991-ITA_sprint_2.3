@@ -2,8 +2,8 @@ import { Row, Col, Statistic, ConfigProvider } from 'antd';
 
 interface OutputProps {
   loading: boolean;
-  result: number;
-  executeTime: number;
+  result: number | null;
+  executeTime: number | null;
 }
 
 const OutputForm: React.FC<OutputProps> = ({
@@ -28,7 +28,7 @@ const OutputForm: React.FC<OutputProps> = ({
           <Statistic
             style={{ width: 250 }}
             title="Tiempo de ejecución:"
-            value={`${executeTime} ms`}
+            value={executeTime !== null ? `${executeTime} ms` : '-'}
             loading={loading}
           />
         </Col>
@@ -36,7 +36,7 @@ const OutputForm: React.FC<OutputProps> = ({
           <Statistic
             style={{ width: 250 }}
             title="Resultado obtenido:"
-            value={result}
+            value={result !== null ? result : '-'}
             loading={loading}
           />
         </Col>
