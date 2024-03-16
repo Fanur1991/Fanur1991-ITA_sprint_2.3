@@ -26,10 +26,6 @@ Run the project in development mode using TypeScript and ESM.
 
 Compile TypeScript files to JavaScript.
 
-### `npm run tsc:watch`
-
-Start the TypeScript compiler in watch mode.
-
 ### `npm start`
 
 Start the server and the client part of the project simultaneously.
@@ -41,10 +37,6 @@ Start a command-line interface to interact with the application.
 ### `npm test`
 
 Run tests using Jest to verify the proper functioning of the memoize function.
-
-### `npm run test:watch`
-
-Run tests using Jest to verify the proper functioning of the memoize function in watch mode.
 
 ## License
 
