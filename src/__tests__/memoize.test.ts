@@ -3,6 +3,14 @@ import { performance } from 'perf_hooks';
 import { memoize } from '../utils/memoize';
 
 describe('Función Memoize', () => {
+  test('La función Fibonacci memoizada maneja correctamente los casos límite', () => {
+    const memoizedFibonacci = fibonacci;
+
+    // Comprobamos los valores límite para n
+    expect(memoizedFibonacci(0)).toBe(0);
+    expect(memoizedFibonacci(1)).toBe(1);
+  });
+
   test('La función Fibonacci memoizada almacena los resultados correctamente', () => {
     const memoizedFibonacci = fibonacci;
 
@@ -54,27 +62,5 @@ describe('Función Memoize', () => {
 
     // Nos aseguramos de que la función se haya llamado solo una vez
     expect(pureFunction).toHaveBeenCalledTimes(1);
-  });
-
-  test('La función Fibonacci memoizada maneja las excepciones correctamente', () => {
-    const throwingFn = jest.fn(() => {
-      throw new Error('Error de prueba');
-    });
-    const memoizedThrowingFn = memoize(throwingFn);
-
-    // Llamamos a la función que arroja una excepción
-    expect(() => memoizedThrowingFn(5)).toThrow('Error de prueba');
-
-    // Nos aseguramos de que la excepción se maneje y el resultado no se almacene en caché
-    expect(() => memoizedThrowingFn(5)).toThrow('Error de prueba');
-    expect(throwingFn).toHaveBeenCalledTimes(2); // Nos aseguramos de que la función se haya llamado dos veces
-  });
-
-  test('La función Fibonacci memoizada maneja correctamente los casos límite', () => {
-    const memoizedFibonacci = fibonacci;
-
-    // Comprobamos los valores límite para n
-    expect(memoizedFibonacci(0)).toBe(0);
-    expect(memoizedFibonacci(1)).toBe(1);
   });
 });

@@ -5,8 +5,6 @@ export const fetchFibonacci = async (req: Request, res: Response) => {
   try {
     const inputValue: number = req.body.value;
 
-    console.log(typeof inputValue);
-
     if (!Number.isInteger(inputValue) || inputValue < 0) {
       return res.status(400).json({
         error: 'Invalid input value. Please provide a non-negative integer.',
