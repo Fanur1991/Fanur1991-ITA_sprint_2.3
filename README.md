@@ -1,8 +1,8 @@
-# Prueba de Funcionamiento de la Función Throttle
+# Memoize Function Testing
 
-Este proyecto tiene como objetivo probar el funcionamiento de la función throttle, que se utiliza para controlar la frecuencia de las llamadas a una función durante eventos frecuentes.
+This project aims to test the functionality of the memoize function, which is used to cache the results of expensive function calls for future use. The memoize function's performance is demonstrated through calculating Fibonacci numbers and factorials (cli app), showcasing its ability to efficiently cache and retrieve previously computed values.
 
-## Tecnologías
+## Technologies
 
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
@@ -11,36 +11,45 @@ Este proyecto tiene como objetivo probar el funcionamiento de la función thrott
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white)
 ![Ant Design](https://img.shields.io/badge/-Ant_Design-61DAFB?style=flat-square&logo=Ant_Design&logoColor=white)
 
+## Features
+
+- **Fibonacci Calculation**: Demonstrates caching of Fibonacci numbers.
+- **Factorial Calculation**: Demonstrates caching of factorials in cli.
+
 ## Scripts
 
 ### `npm run dev`
 
-Ejecuta el proyecto en modo de desarrollo utilizando TypeScript y ESM.
+Run the project in development mode using TypeScript and ESM.
 
 ### `npm run tsc`
 
-Compila los archivos TypeScript a JavaScript.
+Compile TypeScript files to JavaScript.
 
 ### `npm run tsc:watch`
 
-Inicia el compilador TypeScript en modo de observación.
+Start the TypeScript compiler in watch mode.
 
 ### `npm start`
 
-Inicia el servidor y la parte del cliente del proyecto simultáneamente.
+Start the server and the client part of the project simultaneously.
 
 ### `npm run start:cli`
 
-Inicia una interfaz de línea de comandos para interactuar con la aplicación.
+Start a command-line interface to interact with the application.
 
 ### `npm test`
 
-Ejecuta pruebas utilizando Jest para verificar el correcto funcionamiento de la función debounce.
+Run tests using Jest to verify the proper functioning of the memoize function.
 
-## Licencia
+### `npm run test:watch`
 
-Este proyecto se distribuye bajo la licencia Apache2.0.
+Run tests using Jest to verify the proper functioning of the memoize function in watch mode.
+
+## License
+
+This project is distributed under the Apache 2.0 license.
 
 ---
 
-Desarrollado por [Fanur Khusainov](https://github.com/Fanur1991) con ❤️ y ☕.
+Developed by [Fanur Khusainov](https://www.linkedin.com/in/fanur-khusainov-ab86b2102/) with ❤️ and ☕.
